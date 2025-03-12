@@ -14,3 +14,9 @@ This project is a Restaurant Order & Payment Automation System that uses:
 6. Decorator: To add additional features (e.g., discounts, special requests) to orders dynamically without altering their core structure.
    
 These patterns ensure the system is scalable, maintainable, and flexible, making it easy to adapt to future changes.
+
+# Group Information:
+## Member List with Ids:
+1. Mohona Haque: 2121897042
+
+
