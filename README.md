@@ -18,5 +18,7 @@ These patterns ensure the system is scalable, maintainable, and flexible, making
 # Group Information:
 ## Member List with Ids:
 1. Mohona Haque: 2121897042
+2. Md. Nafiz Un Nabi Ishan: 2121346042
+3. Nowshin Nure Azad Shihab: 2131330642
 
 
