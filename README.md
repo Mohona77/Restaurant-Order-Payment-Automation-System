@@ -9,8 +9,8 @@ This project is a Restaurant Order & Payment Automation System that uses:
 
 4. Strategy: To implement flexible payment methods (e.g., Credit Card, Cash, Online) by encapsulating algorithms.
 
-5. Command: To encapsulate order requests as objects, enabling features like undo/redo.
+5. Adapter: To integrate third-party payment gateways seamlessly into the system.
 
-6. Facade: To simplify interactions with complex subsystems like Order Management and Payment Processing.
-
+6. Decorator: To add additional features (e.g., discounts, special requests) to orders dynamically without altering their core structure.
+   
 These patterns ensure the system is scalable, maintainable, and flexible, making it easy to adapt to future changes.
