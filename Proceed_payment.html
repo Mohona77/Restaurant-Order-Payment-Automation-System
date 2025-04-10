@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method | RestoOrder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            padding: 10px 15px;
+        }
+
+        .payment-method {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: white;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .payment-method:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-method.selected {
+            border: 2px solid #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .payment-method img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .btn-confirm {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn-confirm:hover {
+            background-color: #0056b3;
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .payment-methods-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .payment-summary {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar-container {
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #007bff;
+        }
+
+        .progress-bar span {
+            height: 100%;
+            display: block;
+            background-color: #28a745;
+            width: 66%; /* Representing 2/3 steps complete (this could be dynamic) */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#"><i class="fas fa-utensils"></i>RestoOrder</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order_form.html">Order</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Track_Percel.html">Track Order</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="progress-bar-container">
+            <div class="progress-bar">
+                <span></span>
+            </div>
+        </div>
+
+        <div class="payment-summary">
+            <h2 class="text-center">Select Payment Method</h2>
+            <p class="text-center">Choose your preferred method to complete your order.</p>
+
+            <div class="payment-methods-container">
+                <div class="payment-method" id="credit-card" onclick="selectPaymentMethod(this)">
+                    <img src="https://img.icons8.com/ios/452/mastercard.png" alt="Credit Card">
+                    <h5>Credit Card</h5>
+                    <p>Pay using your credit card securely.</p>
+                </div>
+                <div class="payment-method" id="paypal" onclick="selectPaymentMethod(this)">
+                    <img src="https://img.icons8.com/ios/452/paypal.png" alt="PayPal">
+                    <h5>PayPal</h5>
+                    <p>Pay using PayPal's secure platform.</p>
+                </div>
+                <div class="payment-method" id="cod" onclick="selectPaymentMethod(this)">
+                    <img src="https://img.icons8.com/ios/452/cash-on-delivery.png" alt="Cash on Delivery">
+                    <h5>Cash on Delivery</h5>
+                    <p>Pay with cash when your order arrives.</p>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button class="cancel-btn" onclick="window.location.href='order_form.html'">Cancel Order</button>
+                <button class="btn-confirm" onclick="window.location.href='order&Payment_confirmation.html'"id="confirm-payment">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedPaymentMethod = null;
+
+        function selectPaymentMethod(methodElement) {
+            const allMethods = document.querySelectorAll('.payment-method');
+            allMethods.forEach(function(method) {
+                method.classList.remove('selected');
+            });
+
+            methodElement.classList.add('selected');
+            selectedPaymentMethod = methodElement.id;
+            document.getElementById('confirm-payment').disabled = false;
+        }
+
+        document.getElementById('confirm-payment').addEventListener('click', function() {
+            if (selectedPaymentMethod) {
+                window.location.href = 'order&Payment_confirmation.html';  // Navigate to success page or next step
+            }
+        });
+    </script>
+</body>
+</html>
