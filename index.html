@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestoOrder | Restaurant Automation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #343a40;
+      padding: 20px 0;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .navbar-nav a {
+      color: white;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    .navbar-nav a:hover {
+      color: #ffc107;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543352634-4a8df005b674') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    .btn-main {
+      background-color: #ffc107;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      color: #212529;
+      transition: 0.3s;
+    }
+    .btn-main:hover {
+      background-color: #e0a800;
+      color: white;
+    }
+    .features {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+    .features .card {
+      border: none;
+      transition: 0.3s ease-in-out;
+    }
+    .features .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #212529;
+      color: #dee2e6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><i class="fas fa-utensils"></i>RestoOrder</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="order_form.html">Order</a></li>
+            <li class="nav-item"><a class="nav-link" href="Track_Percel.html">Track Order</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Smart Dining, Simple Payment</h1>
+    <p>Experience the future of restaurant service — seamless ordering and automated payments.</p>
+    <a href="order_form.html" class="btn btn-main">Place Your Order</a>
+  </section>
+
+  <section class="features container text-center">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100">
+          <h4>Quick Ordering</h4>
+          <p>Easily browse the menu and place your order in seconds.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100">
+          <h4>Multiple Payment Options</h4>
+          <p>Pay with credit card, cash, or online gateways — your choice.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card p-4 h-100">
+          <h4>Live Order Tracking</h4>
+          <p>Stay updated with real-time notifications about your order.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RestoOrder | Designed for Efficiency</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Future AJAX/JS integrations can go here
+    document.querySelector('.btn-main').addEventListener('click', () => {
+      console.log('Redirecting to order form...');
+    });
+  </script>
+</body>
+</html>
